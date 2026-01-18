@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=4 uid="uid://16nkpbbsbn2k"]
 
-[ext_resource type="PackedScene" uid="uid://b5qun2uginhot" path="res://camera_2d.tscn" id="1_lquwl"]
-[ext_resource type="Script" uid="uid://brnt4evg2pt5f" path="res://world_generator.gd" id="2_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://c500s6x3msss4" path="res://building_generator.tscn" id="2_7mycd"]
-[ext_resource type="Script" uid="uid://d0rbs23xb7fst" path="res://noise_sampler.gd" id="3_lquwl"]
-[ext_resource type="Texture2D" uid="uid://b7it1rdraa2ai" path="res://marching_isometric_squares_lines.png" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://daia7tflg3ofk" path="res://marching_isometric_squares.png" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://b5qun2uginhot" path="res://src/camera_2d.tscn" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://brnt4evg2pt5f" path="res://src/procedural/world_generator.gd" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c500s6x3msss4" path="res://src/procedural/building_generator.tscn" id="2_7mycd"]
+[ext_resource type="Script" uid="uid://d0rbs23xb7fst" path="res://src/procedural/noise_sampler.gd" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://b7it1rdraa2ai" path="res://assets/marching_isometric_squares_lines.png" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://daia7tflg3ofk" path="res://assets/marching_isometric_squares.png" id="7_5vw27"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_272bh"]
 frequency = 0.0004

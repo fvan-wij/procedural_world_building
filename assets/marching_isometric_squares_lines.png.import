@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7it1rdraa2ai"
-path="res://.godot/imported/marching_isometric_squares_lines.png-d557380cd2d28caae720d18c9494a1d3.ctex"
+path="res://.godot/imported/marching_isometric_squares_lines.png-fb97435368584c926bc8b152c8c07822.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://marching_isometric_squares_lines.png"
-dest_files=["res://.godot/imported/marching_isometric_squares_lines.png-d557380cd2d28caae720d18c9494a1d3.ctex"]
+source_file="res://assets/marching_isometric_squares_lines.png"
+dest_files=["res://.godot/imported/marching_isometric_squares_lines.png-fb97435368584c926bc8b152c8c07822.ctex"]
 
 [params]
 

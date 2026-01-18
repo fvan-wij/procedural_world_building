@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c500s6x3msss4"]
 
-[ext_resource type="Script" uid="uid://dga443yshmyp6" path="res://building_generator.gd" id="1_t3mwo"]
-[ext_resource type="PackedScene" uid="uid://b5qun2uginhot" path="res://camera_2d.tscn" id="2_aoxps"]
-[ext_resource type="Texture2D" uid="uid://sioj120uxgeb" path="res://datacenter_tiles.png" id="2_ewqhd"]
+[ext_resource type="Script" uid="uid://dga443yshmyp6" path="res://src/procedural/building_generator.gd" id="1_t3mwo"]
+[ext_resource type="PackedScene" uid="uid://b5qun2uginhot" path="res://src/camera_2d.tscn" id="2_aoxps"]
+[ext_resource type="Texture2D" uid="uid://sioj120uxgeb" path="res://assets/datacenter_tiles.png" id="2_ewqhd"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxr4d"]
 texture = ExtResource("2_ewqhd")

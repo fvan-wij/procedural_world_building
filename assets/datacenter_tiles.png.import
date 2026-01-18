@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daia7tflg3ofk"
-path="res://.godot/imported/marching_isometric_squares.png-818b8700fcfa1e81ccd0908b334b9435.ctex"
+uid="uid://sioj120uxgeb"
+path="res://.godot/imported/datacenter_tiles.png-135394d3b86e184a7b15e799e712c271.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://marching_isometric_squares.png"
-dest_files=["res://.godot/imported/marching_isometric_squares.png-818b8700fcfa1e81ccd0908b334b9435.ctex"]
+source_file="res://assets/datacenter_tiles.png"
+dest_files=["res://.godot/imported/datacenter_tiles.png-135394d3b86e184a7b15e799e712c271.ctex"]
 
 [params]
 
