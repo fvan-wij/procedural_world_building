@@ -3,6 +3,7 @@ extends Node2D
 const TW := 32
 const TH := 16
 const HEIGHT_ATLAS_INDEX := [0, 2, 5, 10, 16]
+const HEIGHT_ATLAS_EXTENDED_INDEX := [0, 2, 5, 9, 14, 20, 27, 35, 44]
 
 enum {
 	EdgeNone,
@@ -59,12 +60,12 @@ func _generate_quad_chunk(rect : Rect2, world_coord : Vector2i, height : int) ->
 	var offset := Vector2i(rect.position.x / TW, rect.position.y / TH)
 	var chunk := Vector2i(rect.size.x / TW, rect.size.y / TH)
 
-	height = clampi(height, 0, 4)
+	height = clampi(height, 0, HEIGHT_ATLAS_EXTENDED_INDEX.size())
 	for y in range(chunk.y):
 		for x in range(chunk.x):
 			var coord := Vector2i(x, y)
-			var atlas_coord := _get_tile_idx(chunk, coord, HEIGHT_ATLAS_INDEX[height])
-			tl.set_cell(world_coord + coord + offset, 0, atlas_coord)
+			var atlas_coord := _get_tile_idx(chunk, coord, HEIGHT_ATLAS_EXTENDED_INDEX[height])
+			tl.set_cell(world_coord + coord + offset, 1, atlas_coord)
 
 
 func traverse_and_set_quad(node : QuadNode, world_coord : Vector2i, height : int = 0) -> void:

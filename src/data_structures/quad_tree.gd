@@ -87,7 +87,7 @@ func traverse_tree(node : QuadNode, do : Callable) -> void:
 
 
 func build_random_tree(node : QuadNode, lvl : int) -> void:
-	if lvl >= 8:
+	if lvl >= 9:
 		return
 
 	var quadrant := randi_range(0, 3)
