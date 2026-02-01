@@ -1,11 +1,17 @@
-[gd_scene load_steps=11 format=4 uid="uid://16nkpbbsbn2k"]
+[gd_scene load_steps=17 format=4 uid="uid://16nkpbbsbn2k"]
 
-[ext_resource type="PackedScene" uid="uid://b5qun2uginhot" path="res://src/camera_2d.tscn" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://b3or3l8itsois" path="res://arrow_spawner.gd" id="1_dg77c"]
 [ext_resource type="Script" uid="uid://brnt4evg2pt5f" path="res://src/procedural/world_generator.gd" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c500s6x3msss4" path="res://src/procedural/building_generator.tscn" id="2_7mycd"]
+[ext_resource type="PackedScene" uid="uid://y4dxopqxtl4a" path="res://assets/arrow.tscn" id="2_ycdy4"]
 [ext_resource type="Script" uid="uid://d0rbs23xb7fst" path="res://src/procedural/noise_sampler.gd" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b7it1rdraa2ai" path="res://assets/marching_isometric_squares_lines.png" id="6_272bh"]
 [ext_resource type="Texture2D" uid="uid://daia7tflg3ofk" path="res://assets/marching_isometric_squares.png" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cgbo76ievpmrg" path="res://assets/character.png" id="7_272bh"]
+[ext_resource type="Script" uid="uid://bpvewb2807u31" path="res://player.gd" id="7_kek77"]
+[ext_resource type="Script" uid="uid://bwge2r6l1c61l" path="res://src/camera_2d.gd" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://jmmcf3nn3ufv" path="res://assets/EBow.png" id="9_4c57u"]
+[ext_resource type="Script" uid="uid://cyjqofjfbckfs" path="res://bow2d.gd" id="9_kek77"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_272bh"]
 frequency = 0.0004
@@ -59,9 +65,10 @@ sources/1 = SubResource("TileSetAtlasSource_272bh")
 
 [node name="Main" type="Node2D"]
 
-[node name="Camera2D" parent="." instance=ExtResource("1_lquwl")]
-
-[node name="Node" type="Node" parent="."]
+[node name="ArrowSpawner" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("1_dg77c")
+projectile = ExtResource("2_ycdy4")
+player = NodePath("../Player")
 
 [node name="WorldGenerator" type="Node" parent="." node_paths=PackedStringArray("noise_sampler", "ground_layer")]
 script = ExtResource("2_1bvp3")
@@ -84,4 +91,23 @@ tile_set = SubResource("TileSet_ycdy4")
 
 [node name="BuildingGenerator" parent="." instance=ExtResource("2_7mycd")]
 z_index = 1
-world_coord = Vector2i(0, 64)
+building_size = Vector2i(256, 256)
+world_coord = Vector2i(-256, 0)
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("bow")]
+z_index = 1
+script = ExtResource("7_kek77")
+movement_speed = 100.0
+bow = NodePath("Bow")
+
+[node name="Bow" type="Sprite2D" parent="Player"]
+texture = ExtResource("9_4c57u")
+offset = Vector2(0, -13.715)
+script = ExtResource("9_kek77")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("7_272bh")
+offset = Vector2(0, -14.89)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+script = ExtResource("8_5vw27")
